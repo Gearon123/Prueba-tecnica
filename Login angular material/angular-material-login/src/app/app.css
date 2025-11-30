@@ -1,0 +1,9 @@
+/* Este archivo debe estar vacío o contener solo reglas que no definan el fondo. 
+   El fondo completo es manejado por src/styles.css. */
+:host {
+    /* Forzamos la transparencia del contenedor local para que el fondo global se vea a través. */
+    background-color: transparent !important; 
+    display: block;
+    width: 100%;
+    height: 100%;
+}

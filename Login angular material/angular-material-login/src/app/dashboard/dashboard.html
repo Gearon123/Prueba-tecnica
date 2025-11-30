@@ -1,0 +1,16 @@
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <h1>¡Bienvenido!</h1>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <p>Has iniciado sesión correctamente</p>
+    <div *ngIf="userEmail" class="user-info">
+      <p>Tu correo electrónico es: <strong>{{ userEmail }}</strong></p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="logout()">Cerrar Sesión</button>
+  </mat-card-actions>
+</mat-card>

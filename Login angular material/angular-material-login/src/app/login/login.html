@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <h2>
+      Prueba tecnica
+    </h2>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- Usa (ngSubmit) para manejar el envío del formulario. Llama al método login() en login.ts -->
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+
+      <!-- Campo NOMBRE -->
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <!-- Binding al modelo user.name -->
+        <input matInput [(ngModel)]="user.name" placeholder="Tu Nombre" name="name" required>
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <!-- Campo EMAIL -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <!-- Binding al modelo user.email -->
+        <input matInput [(ngModel)]="user.email" placeholder="Email" name="email" required>
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <!-- Campo CONTRASEÑA -->
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <!-- Binding al modelo user.password -->
+        <input type="password" matInput [(ngModel)]="user.password" placeholder="Contraseña" name="password" required>
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <!-- Botón de Login. Se deshabilita si los campos requeridos no son válidos. -->
+      <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>
